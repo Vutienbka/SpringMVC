@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.17">
+    <root id="1">
+      <ServerVersion>5.7.29</ServerVersion>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <DefaultCasing>exact</DefaultCasing>
+    </root>
+    <schema id="2" parent="1" name="Book">
+      <Current>1</Current>
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="3" parent="1" name="BookManagement">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="4" parent="1" name="C1119H1">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="5" parent="1" name="CaseStudy">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="6" parent="1" name="Customer">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="7" parent="1" name="Customer_MVC">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="8" parent="1" name="INDEX_PRACTISE">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="9" parent="1" name="Product">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="10" parent="1" name="StudentManage">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="11" parent="1" name="StudentManage_Practise1">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="12" parent="1" name="Student_JDBC">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="13" parent="1" name="Students">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="14" parent="1" name="classicmodels">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="15" parent="1" name="information_schema">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="16" parent="1" name="mysql">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="17" parent="1" name="mysql2">
+      <Collation>latin1_swedish_ci</Collation>
+    </schema>
+    <schema id="18" parent="1" name="performance_schema">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="19" parent="1" name="sys">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+  </database-model>
+</dataSource>
