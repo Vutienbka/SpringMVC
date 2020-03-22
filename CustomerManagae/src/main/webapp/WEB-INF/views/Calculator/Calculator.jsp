@@ -24,7 +24,8 @@
 <body>
 <div class="container">
     <h3>Calculator</h3>
-    <form action="${pageContext.request.contextPath}/calculator/result" method="post">
+    <!--<form action="${pageContext.request.contextPath}/calculator/result" method="post"> -->
+    <form action="${pageContext.request.contextPath}flashAttribute/result" method="get">
         <input name="operand1" type="text" value="${operand1}" style="width: 200px">
         <input name="operand2" type="text" value="${operand2}" style="width: 200px">
         <span>=<input name="result" type="text" value="${result}" style="width: 200px"></span>
