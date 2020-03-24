@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        td{
+            padding:  10px 30px 10px 0px;
+
+        }
+        .firstCol{
+            width: 200px;
+            font-weight: bolder;
+        }
+        .secondCol{
+            width: 850px;
+        }
+    </style>
+</head>
+<body>
+<div id = "loginForm" class="container-sm" style="border: 1px solid #cccccc; width: 500px; position: relative;top: 0px">
+ <form method="post" th:action="@{/submit}" th:object="${emailBox}">
+     <fieldset>
+        <legend>Email Box</legend>
+         <table>
+             <tr>
+                 <td class="firstCol">Languages</td>
+                 <td class="secondCol">
+                     <select th:field="*{language}" style="width: 200px">
+                         <option th:each="language:${languageList}"
+                                 th:value="${language}"
+                                 th:text="${language}">
+                         </option>
+                     </select>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="firstCol">PageSize</td>
+                 <td class="secondCol" >
+                     <span>Show</span>
+                     <select th:field="*{pageSize}" style="margin: 0 10px">
+                         <option th:each="pageSize: ${pageSizeList}"
+                                 th:value="${pageSize}"
+                         th:text="${pageSize}" ></option>
+                     </select>
+                 <span>Emails per page</span>
+                 </td>
+
+             </tr>
+             <tr>
+                 <td class="firstCol">Spam Filter</td>
+                 <td class="secondCol">
+                     <input type="checkbox" th:field="*{spamFilter}" th:value="spamFilter" style="margin-right: 15px">
+                     <span>Enable spam filter</span>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="firstCol">Signature</td>
+                 <td class="secondCol">
+                     <textarea th:field="*{signature}"></textarea>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="firstCol">
+
+                 </td>
+                 <td class="secondCol">
+                     <input type="submit" value="Update" style="width: 100px; background: blue; border-radius: 5px">
+                     <input type="submit" value="Cancel" style="width: 100px; margin-left: 15px;border-radius: 5px">
+                 </td>
+             </tr>
+         </table>
+     </fieldset>
+ </form>
+
+</div>
+</body>
+</html>
