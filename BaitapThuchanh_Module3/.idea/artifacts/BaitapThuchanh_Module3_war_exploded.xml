@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="BaitapThuchanh_Module3:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/BaitapThuchanh_Module3_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="BaitapThuchanh_Module3/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="BaitapThuchanh_Module3" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
