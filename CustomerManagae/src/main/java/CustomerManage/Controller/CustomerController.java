@@ -7,11 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 
+@EnableWebMvc
 @Controller
 public class CustomerController {
     @Autowired
@@ -67,7 +69,16 @@ public class CustomerController {
     }
     /*Bai ve Calculator*/
     @RequestMapping(value = "/calculator")
-    public String calculator(){
+    public String calculator(RedirectAttributes redirect, Model model){
+        if(model.asMap().get("operand1")!=null) {
+            redirect.addFlashAttribute("operand1", model.asMap().get("operand1").toString());
+        }
+        if(model.asMap().get("operand2")!=null) {
+            redirect.addFlashAttribute("operand2", model.asMap().get("operand2").toString());
+        }
+        if(model.asMap().get("result")!=null) {
+            redirect.addFlashAttribute("result", model.asMap().get("result").toString());
+        }
         return "Calculator/Calculator";
     }
 
@@ -102,8 +113,8 @@ public class CustomerController {
         return "Calculator/Calculator";
     }
 
-    @RequestMapping(value = "/flashAttribute/result/", method=RequestMethod.GET)
-    public RedirectView calculatorResultUsingRedirect(@RequestParam("operator") String operator,
+    @RequestMapping(value = "/flashAttribute/result", method=RequestMethod.GET)
+    public String calculatorResultUsingRedirect(@RequestParam("operator") String operator,
                                                       @RequestParam("operand1") float operand1,
                                                       @RequestParam("operand2") float operand2,
                                                       RedirectAttributes redirectAttributes){
@@ -132,7 +143,7 @@ public class CustomerController {
         redirectAttributes.addFlashAttribute("operand2",operand2);
         redirectAttributes.addFlashAttribute("result",result);
 
-        return new RedirectView("Calculator/Calculator");
+        return "redirect:/calculator";
     }
 
 }
