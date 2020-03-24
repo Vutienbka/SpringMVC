@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Detail Information</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div>
+    <table class="table table-bordered table-hover" style="text-align: center">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Customer No</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Date Of Birth</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${customer.customerId}"></td>
+            <td th:text="${customer.customerName}"></td>
+            <td th:text="${customer.customerEmail}"></td>
+            <td th:text="${customer.customerAddress}"></td>
+            <td th:text="${customer.customerDateOfBirth}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>
