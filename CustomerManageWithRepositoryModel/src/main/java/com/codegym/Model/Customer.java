@@ -1,5 +1,6 @@
 package com.codegym.Model;
 
+
 public class Customer {
     private int customerId;
     private String customerName;
