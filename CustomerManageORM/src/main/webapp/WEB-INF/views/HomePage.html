@@ -1,0 +1,45 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{Layout::head}">
+</head>
+<body>
+<nav th:replace="~{Layout::navbar}"></nav>
+<div class="container" style="height: 700px">
+    <p th:text="${message}" style="color: red" ></p>
+    <form method="post" th:action="@{/customer/addForm}">
+        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>Add New Customer</button>
+    </form>
+    <div>
+        <table class="table table-bordered table-hover" style="text-align: center">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Customer No</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">View</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="customer:${customerList}">
+                <td th:text="${customer.getId()}"></td>
+                <td th:text="${customer.getCustomerName()}"></td>
+                <td th:text="${customer.getCustomerEmail()}"></td>
+                <td th:text="${customer.getCustomerAddress()}"></td>
+                <td th:text="${customer.getCustomerDateOfBirth()}"></td>
+                <td><a th:href="@{/customer/{id}/edit(id=${customer.getId()})}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a th:href="@{/customer/{Id}/delete(Id=${customer.getId()})}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <td><a th:href="@{/customer/{id}/view(id=${customer.getId()})}"><span class="glyphicon glyphicon-envelope"></span></a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer th:replace="~{Layout::footer}"></footer>
+</body>
+
+</html>
