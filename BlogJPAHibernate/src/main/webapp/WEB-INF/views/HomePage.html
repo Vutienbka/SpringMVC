@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<title>Home Page</title>
+<script type="text/javascript" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="js_And_css_Lib/js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    body{
+        font-family: "Courier New";
+    }
+
+    a{
+        margin-right: 15px;
+    }
+    a:hover{
+        color: blue;
+    }
+    td,th{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="container" style="border: 1px solid black">
+    <h2>Blog</h2>
+    <div style="position: relative; margin-bottom: 50px">
+    <span style="position: absolute; right: 0">
+    <a href="#">Home</a>
+    <a href="#">Sign up</a>
+    <a href="#">Contact</a>
+    </span>
+    </div>
+    <h3>My name is Vu Van Tien</h3>
+    <div>
+        <hr style="background-color: blue;height: 5px; position:relative">
+    </div>
+   <div>
+       <div style="text-align: center">
+           <img src="https://static.wixstatic.com/media/acd3eb_0871b65bdc39426e9d645c48d473d2c6.png">
+       </div>
+   </div>
+    <p style="text-align: justify">
+        I am Vu Van Tien and this is my first blog post! I am very excited to start blogging <br>
+        and to share with you insights about my favorite business topics and involve you in my MBA experience!<br>
+        Currently, I am enjoying a break of about 4 weeks as I quit my consulting job a couple of weeks ago to start my MBA studies in September in Switzerland. <br>
+        It feels great and I enjoy this transition phase a lot. Closing one phase of life and opening a new chapter. <br>
+        I am excited how I will feel being a student again in an international and highly diverse MBA class. <br>
+        But for now, I enjoy to welcome you at Annie’s Business World to share with you first insights into self-empowerment, <br>
+        personal growth and how my MBA studies will start off!<br>
+        If you want to know why I created Tien’s blog check out Here!<br>
+        Get started and have a look at Annie’s Business Recommendations<br>
+        Note: If you use any of my resources mentioned, share it on pinterest with #anniesbusinessworld# and we can follow up!<br>
+        Sign up to receive the latest blog posts via Email!<br>
+        Let’s start my Business World!<br>
+        Cheers!
+    </p>
+    <div style="position: relative; margin-top: 50px">
+        <a th:href="@{post/list}" style="border-right: 1px solid #cccccc; padding-right: 15px">My post</a>
+        <a href="#">Paged List</a>
+    </div>
+    <hr style="background-color: blue;height: 3px">
+    <footer>
+        <div class="card text-center" >
+            <div class="card-header">
+                Featured
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

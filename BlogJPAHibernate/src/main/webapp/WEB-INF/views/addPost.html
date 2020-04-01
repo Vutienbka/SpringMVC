@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <link rel="stylesheet" href="js_And_css_Lib/css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js_And_css_Lib/js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .form-group{
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="border: 1px solid #cccccc; margin-top: 15px; font-family: 'Courier New'">
+    <h2 style="margin-bottom: 30px">Add Post</h2>
+    <form th:action="@{post/add}" method="post">
+        <div class="form-group">
+            <label class="control-label">PostId</label>
+            <input class="form-control" name="Id" type="text">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Title</label>
+            <input class="form-control" name="title" type="text">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Author</label>
+            <input class="form-control" name="author" type="text">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Content</label>
+            <textarea class="form-control" name="content" style="height: 300px; overflow: scroll"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" style="margin-right: 30px">   Create   </button>
+            <button type="submit" class="btn btn-primary">   Reset   </button>
+        </div>
+        <div style="position: relative; margin-top: 15px; margin-bottom: 15px">
+            <a href="#" style="border-right: 1px solid #cccccc; padding-right: 15px">List</a>
+            <a href="#">Paged List</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

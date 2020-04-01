@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script type="text/javascript" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="js_And_css_Lib/js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    body{
+        font-family: "Courier New";
+    }
+    span{
+        float: right;
+        position: relative;
+        bottom: 30px;
+    }
+    a{
+        margin-right: 15px;
+    }
+    a:hover{
+        color: blue;
+    }
+</style>
+</head>
+<body>
+<div class="container" style="border: 1px solid black;margin-bottom: 15px; font-size: 17px">
+    <h2>Blog</h2>
+    <span>
+    <a href="#">Home</a>
+    <a href="#">Sign up</a>
+    <a href="#">Contact</a>
+    </span>
+    <hr style="background-color: blue;height: 5px">
+    <h2 style="margin-bottom: 30px">Edit Post</h2>
+    <form action="/post/edit" th:object="${post}">
+        <div class="form-group">
+            <label class="control-label">PostId</label>
+            <input class="form-control" name="Id" type="text" th:value="${post.getId()}">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Title</label>
+            <input class="form-control" name="title" type="text"  th:value="${post.getTitle()}">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Author</label>
+            <input class="form-control" name="author" type="text" th:value="${post.getAuthor()}">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Content</label>
+            <textarea class="form-control" name="content" th:field="*{content}" th:value="${post.getContent()}"
+                      style="height: 300px; overflow: scroll"></textarea>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                <label class="control-label">Created Date</label>
+                <input class="form-control" name="createdDate" type="text" th:value="${post.getCreatedDate()}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <label class="control-label">Updated Date</label>
+                <input class="form-control" name="updatedDate" type="text" th:value="${post.getUpdatedDate()}">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" style="margin-right: 30px">   Save   </button>
+            <button type="submit" class="btn btn-primary">   Cancel   </button>
+        </div>
+        <div style="position: relative; margin-top: 15px; margin-bottom: 15px">
+            <a href="#" style="border-right: 1px solid #cccccc; padding-right: 15px">List</a>
+            <a href="#">Paged List</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

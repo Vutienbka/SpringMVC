@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<script type="text/javascript" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="js_And_css_Lib/js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    body{
+        font-family: "Courier New";
+    }
+
+    a{
+        margin-right: 15px;
+    }
+    a:hover{
+        color: blue;
+    }
+    td,th{
+        text-align: center;
+    }
+    tr,th{
+        height: 35px;
+        overflow: hidden;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="container" style="height: 700px;border: 1px solid black">
+    <h2>Blog</h2>
+    <div style="position: relative; margin-bottom: 50px">
+    <span style="position: absolute; right: 0">
+    <a href="#">Home</a>
+    <a href="#">Sign up</a>
+    <a href="#">Contact</a>
+    </span>
+    </div>
+
+    <div>
+    <hr style="background-color: blue;height: 5px; position:relative">
+    </div>
+    <div style="position: relative">
+        <span style="position: absolute; left: 0">Page 1/1</span>
+        <span style=" position: absolute; right: 0">Showing 1 -1 of 1 <a href="#">First</a>
+            <a href="#">Previous</a>
+            <a href="#">Next</a>
+            <a href="#">Last</a>
+        </span>
+    </div>
+    <div style="position: relative; top: 20px">
+    <table class="table table-hover table-bordered" >
+        <tr>
+            <th>Post Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Content</th>
+            <th>Created date</th>
+            <th>Updated date</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="post:${postList}">
+            <td th:text="${post.getId()}"></td>
+            <td th:text="${post.getTitle()}"></td>
+            <td th:text="${post.getAuthor()}"></td>
+            <td th:text="${post.getContent()}"></td>
+            <td th:text="${post.getCreatedDate()}"></td>
+            <td th:text="${post.getUpdatedDate()}"></td>
+            <td>
+                <a th:href="@{/post/{id}/edit(id=${post.getId()})}">Edit</a>
+                <a th:href="@{/post/{id}/delete(id=${post.getId()})}">Delete</a>
+                <a th:href="@{/post/{id}/view(id=${post.getId()})}">Show</a>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div style="position: relative">
+        <span style="position: absolute; left: 0">Page 1/1</span>
+        <span style=" position: absolute; right: 0">Showing 1 -1 of 1 <a href="#">First</a>
+            <a href="#">Previous</a>
+            <a href="#">Next</a>
+            <a href="#">Last</a>
+        </span>
+    </div>
+
+    <div style="position: relative; margin-top: 50px">
+        <a th:href="@{/addForm}" style="border-right: 1px solid #cccccc; padding-right: 15px">Add post</a>
+        <a href="#">Paged List</a>
+    </div>
+    <hr style="background-color: blue;height: 3px">
+    <footer>
+        <div class="card text-center" >
+            <div class="card-header">
+                Powered by Vu Van Tien
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

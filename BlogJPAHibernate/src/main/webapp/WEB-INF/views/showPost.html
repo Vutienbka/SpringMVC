@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show post</title>
+    <link rel="stylesheet" href="js_And_css_Lib/css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js_And_css_Lib/js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+<div class="container" style="margin-top: 15px; font-family: 'Courier New'">
+        <table class="table table-hover" style="width: 100%">
+            <tbody>
+            <tr>
+                <td><b>PostId:</b></td>
+                <td th:text="${post.getId()}"></td>
+            </tr>
+            <tr>
+                <td><b>Title:</b></td>
+                <td th:text="${post.getTitle()}"></td>
+            </tr>
+            <tr>
+                <td><b>Author:</b></td>
+                <td th:text="${post.getAuthor()}"></td>
+            </tr>
+            <tr>
+                <td><b>Content:</b></td>
+                <td th:text="${post.getContent()}"></td>
+            </tr>
+            <tr>
+                <td><b>CreatedDate:</b></td>
+                <td th:text="${post.getCreatedDate()}"></td>
+            </tr>
+            <tr>
+                <td><b>UpdatedDate:</b></td>
+                <td th:text="${post.getUpdatedDate()}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+</div>
+</body>
+</html>
