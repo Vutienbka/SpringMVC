@@ -11,19 +11,23 @@
         <a href="/customers">Customer list</a>
     </p>
     <form th:action="@{/delete-customer}" th:object="${customer}" method="post">
-        <input th:type="hidden" name="id" th:field="*{id}">
+        <input th:type="hidden" name="id" th:field="*{Id}">
         <table>
             <tr>
-                <td>First name:</td>
-                <td th:text="${customer.get().customerName}"></td>
+                <td>Customer Name:</td>
+                <td th:text="${customer.customerName}"></td>
             </tr>
             <tr>
-                <td>Last name:</td>
-                <td th:text="${customer.get().customerEmail}"></td>
+                <td>Customer Email:</td>
+                <td th:text="${customer.customerEmail}"></td>
             </tr>
             <tr>
-                <td>Last name:</td>
-                <td th:text="${customer.get().customerAddress}"></td>
+                <td>Customer Address:</td>
+                <td th:text="${customer.customerAddress}"></td>
+            </tr>
+            <tr>
+                <td>Province:</td>
+                <td th:text="${customer.province.provinceName}"></td>
             </tr>
             <tr>
                 <td></td>

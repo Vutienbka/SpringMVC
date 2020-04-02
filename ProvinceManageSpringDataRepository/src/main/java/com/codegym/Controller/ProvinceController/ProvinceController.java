@@ -119,9 +119,7 @@ public class ProvinceController {
         Optional<Province> province = provinceService.findById(provinceId);
         ModelAndView modelAndView = new ModelAndView("Province/viewProvince");
         modelAndView.addObject("province",province);
-
         List<Customer> customers = customerService.findAllByProvince(province);
-
         modelAndView.addObject("province", province);
         modelAndView.addObject("customers", customers);
         return modelAndView;
