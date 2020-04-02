@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create customer</title>
+    <style>
+        .error-field{
+            color: red;
+            font-style: italic;
+            font-weight: bolder;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create customer</h1>
+    <p>
+        <a href="/customers">Customer list</a>
+    </p>
+<!--    <th:block th:if="${message}">-->
+<!--        <p th:text="${message}"></p>-->
+<!--    </th:block>-->
+    <form th:action="@{/validateCustomer}" th:object="${customer}" method="post">
+        <table>
+            <tr>
+                <td>Customer Name:</td>
+                <td><input type="text" th:field="*{customerName}"/>
+                </td>
+                <td><span class="error-field" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></span></td>
+            </tr>
+
+            <tr>
+                <td>Customer Email:</td>
+                <td><input type="text" th:field="*{customerEmail}"/></td>
+                <td><span class="error-field" th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}"></span></td>
+            </tr>
+            <tr>
+                <td>Customer Address:</td>
+                <td><input type="text" th:field="*{customerAddress}"/></td>
+            </tr>
+            <tr>
+                <td>Customer Age:</td>
+                <td><input type="text" th:field="*{customerAge}"></td>
+                <td><span class="error-field" th:if="${#fields.hasErrors('customerAge')}" th:errors="*{customerAge}"></span></td>
+            </tr>
+
+            <tr>
+                <td>Customer Phone Number:</td>
+                <td><input type="text" th:field="*{customerPhoneNumber}"/></td>
+                <td><span class="error-field" th:if="${#fields.hasErrors('customerPhoneNumber')}" th:errors="*{customerPhoneNumber}"></span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Create customer"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
