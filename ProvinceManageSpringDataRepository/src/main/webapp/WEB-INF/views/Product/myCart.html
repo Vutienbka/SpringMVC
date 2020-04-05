@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>myCart</title>
+</head>
+<body>
+<div class="container">
+        <table th:each="item : ${myCart.getItemList()}">
+            <tr>
+                <td>Image:</td>
+                <td><img th:src="@{'/home/vutienbka/Downloads/ImageServer/'+ ${item.getProduct().getProductImage()}}" th:alt="${item.getProduct().getProductImage()}"/></td>
+                <td><img src="/home/vutienbka/Downloads/ImageServer/Jpg.png"/></td>
+            </tr>
+            <tr>
+                <td>Product Name:</td>
+                <td><p th:text="${item.getProduct().getProductName()}"/></td>
+            </tr>
+            <tr>
+                <td>Quantity:</td>
+                <td><p th:text="${item.getQuantity()}"/></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><p th:text="${item.getPrice()}"/></td>
+            </tr>
+        </table>
+</div>
+</body>
+</html>

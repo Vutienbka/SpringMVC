@@ -32,6 +32,12 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="C1119H1: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ProvinceManage: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
       <path>
@@ -39,7 +45,14 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="ProvinceManage: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="Province_Customer: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="Product: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ProvinceManage: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="Province: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -81,8 +94,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -105,23 +118,27 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CustomerValidation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UploadFile_Gradle_Practise" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.15408319" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/html" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Province" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Product" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Customer" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/java/com/codegym/WebAppConfig" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.codegym.Model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/html" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Province" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat Server">
     <configuration name="Tomcat Server" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.311" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -194,6 +211,68 @@
         </option>
       </method>
     </configuration>
+    <configuration name="index.html" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.311" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WEB-INF/views/Product/index.html" />
+      <deployment>
+        <artifact name="Gradle : org.example : ProvinceManageSpringDataRepository-1.0-SNAPSHOT.war (exploded)">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Gradle___org_example___ProvinceManageSpringDataRepository_1_0_SNAPSHOT_war__exploded_" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="index_html_ProvinceManageSpringDataRepository" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="46539" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : org.example : ProvinceManageSpringDataRepository-1.0-SNAPSHOT.war (exploded)" />
+        </option>
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Tomcat Server.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -235,6 +314,14 @@
       <workItem from="1585729021115" duration="3215000" />
       <workItem from="1585734997713" duration="5501000" />
       <workItem from="1585744032846" duration="5168000" />
+      <workItem from="1585795042027" duration="1408000" />
+      <workItem from="1585838370685" duration="6724000" />
+      <workItem from="1585878232558" duration="3085000" />
+      <workItem from="1585889555385" duration="16775000" />
+      <workItem from="1585919491606" duration="7158000" />
+      <workItem from="1585967966278" duration="15667000" />
+      <workItem from="1585996692721" duration="5288000" />
+      <workItem from="1586053601719" duration="19681000" />
     </task>
     <servers />
   </component>
@@ -250,97 +337,156 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="214" width="800" height="677" key="#Project_Structure/67.27.1853.1053@67.27.1853.1053" timestamp="1585657758304" />
-    <state x="588" y="214" width="906" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585582354362">
+    <state x="635" y="156" width="707" height="792" key="#SignIn.html" timestamp="1585901441468">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="214" width="906" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585582354362" />
-    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1585651827086">
+    <state x="635" y="156" width="707" height="792" key="#SignIn.html/67.27.1853.1053@67.27.1853.1053" timestamp="1585901441468" />
+    <state x="588" y="214" width="906" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586070727173">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1585651827086" />
-    <state x="609" y="27" width="748" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585579034210">
+    <state x="588" y="214" width="906" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1586070727173" />
+    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1585996503064">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="609" y="27" width="748" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585579034210" />
+    <state x="801" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1585996503064" />
+    <state x="636" y="214" width="800" height="677" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1585795080080">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="636" y="214" width="800" height="677" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/67.27.1853.1053@67.27.1853.1053" timestamp="1585795080080" />
+    <state x="609" y="27" width="748" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585975417862">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="609" y="27" width="748" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585975417862" />
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1585650251439">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585650251439" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1585758298995">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1586068081935">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1585758298995" />
-    <state width="1244" height="278" key="GridCell.Tab.0.bottom" timestamp="1585740726275">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1586068081935" />
+    <state width="1244" height="283" key="GridCell.Tab.0.bottom" timestamp="1586079180895">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726275" />
-    <state width="1244" height="278" key="GridCell.Tab.0.center" timestamp="1585740726274">
+    <state width="1244" height="283" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180895" />
+    <state width="1244" height="283" key="GridCell.Tab.0.center" timestamp="1586079180893">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726274" />
-    <state width="1244" height="278" key="GridCell.Tab.0.left" timestamp="1585740726273">
+    <state width="1244" height="283" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180893" />
+    <state width="1244" height="283" key="GridCell.Tab.0.left" timestamp="1586079180892">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726273" />
-    <state width="1244" height="278" key="GridCell.Tab.0.right" timestamp="1585740726274">
+    <state width="1244" height="283" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180892" />
+    <state width="1244" height="283" key="GridCell.Tab.0.right" timestamp="1586079180894">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726274" />
-    <state width="1244" height="278" key="GridCell.Tab.1.bottom" timestamp="1585740726277">
+    <state width="1244" height="283" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180894" />
+    <state width="1244" height="283" key="GridCell.Tab.1.bottom" timestamp="1586079180900">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726277" />
-    <state width="1244" height="278" key="GridCell.Tab.1.center" timestamp="1585740726276">
+    <state width="1244" height="283" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180900" />
+    <state width="1244" height="283" key="GridCell.Tab.1.center" timestamp="1586079180899">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726276" />
-    <state width="1244" height="278" key="GridCell.Tab.1.left" timestamp="1585740726275">
+    <state width="1244" height="283" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180899" />
+    <state width="1244" height="283" key="GridCell.Tab.1.left" timestamp="1586079180898">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726275" />
-    <state width="1244" height="278" key="GridCell.Tab.1.right" timestamp="1585740726276">
+    <state width="1244" height="283" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180898" />
+    <state width="1244" height="283" key="GridCell.Tab.1.right" timestamp="1586079180899">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726276" />
-    <state width="1244" height="278" key="GridCell.Tab.2.bottom" timestamp="1585740726285">
+    <state width="1244" height="283" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180899" />
+    <state width="1244" height="278" key="GridCell.Tab.13.bottom" timestamp="1585878750783">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726285" />
-    <state width="1244" height="278" key="GridCell.Tab.2.center" timestamp="1585740726283">
+    <state width="1244" height="278" key="GridCell.Tab.13.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585878750783" />
+    <state width="1244" height="278" key="GridCell.Tab.13.center" timestamp="1585878750781">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726283" />
-    <state width="1244" height="278" key="GridCell.Tab.2.left" timestamp="1585740726277">
+    <state width="1244" height="278" key="GridCell.Tab.13.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585878750781" />
+    <state width="1244" height="278" key="GridCell.Tab.13.left" timestamp="1585878750779">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726277" />
-    <state width="1244" height="278" key="GridCell.Tab.2.right" timestamp="1585740726285">
+    <state width="1244" height="278" key="GridCell.Tab.13.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585878750779" />
+    <state width="1244" height="278" key="GridCell.Tab.13.right" timestamp="1585878750782">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1244" height="278" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585740726285" />
-    <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1585663634517">
+    <state width="1244" height="278" key="GridCell.Tab.13.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585878750782" />
+    <state width="1244" height="278" key="GridCell.Tab.14.bottom" timestamp="1585878751777">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="263" height="500" key="HiddenNamespacesPopup/67.27.1853.1053@67.27.1853.1053" timestamp="1585663634517" />
-    <state x="822" y="434" width="367" height="236" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585648326158">
+    <state width="1244" height="278" key="GridCell.Tab.14.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585878751777" />
+    <state width="1244" height="278" key="GridCell.Tab.14.center" timestamp="1585878751776">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="822" y="434" width="367" height="236" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/67.27.1853.1053@67.27.1853.1053" timestamp="1585648326158" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1585744156531">
+    <state width="1244" height="278" key="GridCell.Tab.14.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585878751776" />
+    <state width="1244" height="278" key="GridCell.Tab.14.left" timestamp="1585878751776">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585744156531" />
-    <state x="302" y="146" width="1372" height="813" key="new project wizard" timestamp="1585750140107">
+    <state width="1244" height="278" key="GridCell.Tab.14.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585878751776" />
+    <state width="1244" height="278" key="GridCell.Tab.14.right" timestamp="1585878751777">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="302" y="146" width="1372" height="813" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1585750140107" />
-    <state x="738" y="181" width="500" height="743" key="refactoring.ChangeSignatureDialog" timestamp="1585672539826">
+    <state width="1244" height="278" key="GridCell.Tab.14.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585878751777" />
+    <state width="1244" height="283" key="GridCell.Tab.2.bottom" timestamp="1586079180898">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="738" y="181" width="500" height="743" key="refactoring.ChangeSignatureDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585672539826" />
+    <state width="1244" height="283" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180898" />
+    <state width="1244" height="283" key="GridCell.Tab.2.center" timestamp="1586079180896">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="283" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180896" />
+    <state width="1244" height="283" key="GridCell.Tab.2.left" timestamp="1586079180895">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="283" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180895" />
+    <state width="1244" height="283" key="GridCell.Tab.2.right" timestamp="1586079180897">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="283" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1586079180897" />
+    <state width="1244" height="283" key="GridCell.Tab.4.bottom" timestamp="1586057705745">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="283" key="GridCell.Tab.4.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1586057705745" />
+    <state width="1244" height="283" key="GridCell.Tab.4.center" timestamp="1586057705744">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="283" key="GridCell.Tab.4.center/67.27.1853.1053@67.27.1853.1053" timestamp="1586057705744" />
+    <state width="1244" height="283" key="GridCell.Tab.4.left" timestamp="1586057705744">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="283" key="GridCell.Tab.4.left/67.27.1853.1053@67.27.1853.1053" timestamp="1586057705744" />
+    <state width="1244" height="283" key="GridCell.Tab.4.right" timestamp="1586057705745">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1244" height="283" key="GridCell.Tab.4.right/67.27.1853.1053@67.27.1853.1053" timestamp="1586057705745" />
+    <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1585975158260">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="263" height="500" key="HiddenNamespacesPopup/67.27.1853.1053@67.27.1853.1053" timestamp="1585975158260" />
+    <state x="822" y="434" width="367" height="236" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585974931278">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="822" y="434" width="367" height="236" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/67.27.1853.1053@67.27.1853.1053" timestamp="1585974931278" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1586053623896">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1586053623896" />
+    <state x="302" y="146" width="1372" height="813" key="new project wizard" timestamp="1585796147439">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="302" y="146" width="1372" height="813" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1585796147439" />
+    <state x="738" y="181" width="500" height="743" key="refactoring.ChangeSignatureDialog" timestamp="1585890897306">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="738" y="181" width="500" height="743" key="refactoring.ChangeSignatureDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1585890897306" />
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1585583564162">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1585583564162" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ProvinceManageSpringDataRepository$index_html.ic" NAME="index.html Coverage Results" MODIFIED="1585996575441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

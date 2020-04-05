@@ -73,7 +73,7 @@ public class ProvinceController {
 
     @RequestMapping(value="edit-province/{id}")
     public ModelAndView showEditForm(@PathVariable("id") Long provinceId){
-        Optional<Province> province = provinceService.findById(provinceId);
+        Province province = provinceService.findById(provinceId);
         ModelAndView modelAndView;
         if(province!=null){
              modelAndView = new ModelAndView("Province/editProvince");
@@ -95,7 +95,7 @@ public class ProvinceController {
 
     @GetMapping("delete-province/{id}")
     public ModelAndView showDeleteForm(@PathVariable("id") Long provinceId){
-        Optional<Province> province = provinceService.findById(provinceId);
+        Province province = provinceService.findById(provinceId);
         ModelAndView modelAndView;
         if(province != null) {
              modelAndView = new ModelAndView("Province/deleteProvince");
@@ -113,10 +113,10 @@ public class ProvinceController {
         return "redirect:province/list";
     }
 
+
     @GetMapping(value = "view-province/{id}")
     public ModelAndView viewProvince(@PathVariable("id") Long provinceId){
-
-        Optional<Province> province = provinceService.findById(provinceId);
+        Province province = provinceService.findById(provinceId);
         ModelAndView modelAndView = new ModelAndView("Province/viewProvince");
         modelAndView.addObject("province",province);
         List<Customer> customers = customerService.findAllByProvince(province);

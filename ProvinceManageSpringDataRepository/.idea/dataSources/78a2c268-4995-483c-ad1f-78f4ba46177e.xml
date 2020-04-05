@@ -953,10 +953,10 @@
     <table id="244" parent="8" name="Customer">
       <Engine>MyISAM</Engine>
     </table>
-    <table id="245" parent="8" name="Province">
+    <table id="245" parent="8" name="Product">
       <Engine>MyISAM</Engine>
     </table>
-    <table id="246" parent="8" name="Province_Customer">
+    <table id="246" parent="8" name="Province">
       <Engine>MyISAM</Engine>
     </table>
     <table id="247" parent="8" name="hibernate_sequence">
@@ -1064,69 +1064,71 @@ cId</ColNames>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="244" name="provinceId">
+    <column id="267" parent="244" name="province_Id">
       <Position>5</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="244" name="province_Id">
-      <Position>6</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="269" parent="244" name="FK2hbf36oxx9nwavk123oa26is4">
-      <ColNames>provinceId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="270" parent="244" name="FK1amw5oxyjwsj1otpau72s5ycp">
+    <index id="268" parent="244" name="FK1amw5oxyjwsj1otpau72s5ycp">
       <ColNames>province_Id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="271" parent="244" name="PRIMARY">
+    <key id="269" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="272" parent="245" name="Id">
+    <column id="270" parent="245" name="Id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="245" name="provinceName">
+    <column id="271" parent="245" name="productDescription">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="274" parent="245" name="PRIMARY">
+    <column id="272" parent="245" name="productImage">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="273" parent="245" name="productName">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="274" parent="245" name="productPrice">
+      <Position>5</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="275" parent="245" name="productQuantity">
+      <Position>6</Position>
+      <DataType>double|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="276" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="275" parent="246" name="Province_Id">
+    <column id="277" parent="246" name="Id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="246" name="customerList_Id">
+    <column id="278" parent="246" name="provinceName">
       <Position>2</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="277" parent="246" name="UK_1frhmjao3oxp4nguhvjlhfa7q">
-      <ColNames>customerList_Id</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <index id="278" parent="246" name="FKkx98anv4ffe0d32xe3ipvhjxy">
-      <ColNames>Province_Id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="279" parent="246" name="UK_1frhmjao3oxp4nguhvjlhfa7q">
-      <ColNames>customerList_Id</ColNames>
-      <UnderlyingIndexName>UK_1frhmjao3oxp4nguhvjlhfa7q</UnderlyingIndexName>
+    <key id="279" parent="246" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
     </key>
     <column id="280" parent="247" name="next_val">
       <Position>1</Position>

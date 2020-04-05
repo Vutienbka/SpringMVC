@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface IProvinceService {
     List<Province> findAll();
-    Optional<Province> findById(Long provinceId);
+    Province findById(Long provinceId);
     boolean save(Province province);
     void remove(Long provinceId);
 }
