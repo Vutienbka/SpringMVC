@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Hello Admin</h2>
+    <table>
+        <tr>
+            <td>Your FullName:</td>
+            <td th:text="${user.getFullName()}"></td>
+        </tr>
+        <tr>
+            <td>UserName:</td>
+            <td th:text="${admin.getUsername()}"></td>
+        </tr>
+        <tr>
+            <td>PassWord:</td>
+            <td th:text="${admin.getPassword()}"></td>
+        </tr>
+    </table>
+    <p><a th:href="@{admin/change/infor}" methods="Post"></a>Change infor??</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Change</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" >
+    <div style="top: 15px">
+
+    <div style="width:700px">
+        <form th:action="@{/user/change/infor}" th:object="${user}"  method="POST">
+                <div style="font-size: 25px;text-align: center;position: relative; top:10px"><p>Form for change information</p></div>
+            <div id="show" class="alert alert-success" role="alert" style="display: none">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                Updated successfully
+            </div>
+                <div class="form-group">
+                    <td><input class="form-control" th:type="hidden" name="id" th:field="*{id}"><br></td>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">FullName:</label>
+                    <input class="form-control" type="text" name="fullName" th:value="${user.getFullName()}"><br>
+                </div>
+
+                <div>
+                    <label class="control-label">UserName:</label>
+                    <input class="form-control"  type="text" name="username" th:value="${user.getUsername()}"><br>
+                </div>
+
+                <div>
+                    <label class="control-label">Password:</label>
+                    <input class="form-control"  type="password" name="password" th:value="${user.getPassword()}"><br>
+                </div>
+<!--                <div>-->
+<!--                    <label class="control-label">Status:</label>-->
+<!--                    <input class="form-control"  type="text" name="status" th:value="${user.getStatus()}"><br>-->
+<!--                </div>-->
+                <!--                <tr>-->
+                <!--                    <td>-->
+                <!--                        <input type="text" name="roleList" th:text="${user.getRoleList()}" style="visibility: hidden"><br>-->
+                <!--                    </td>-->
+                <!--                </tr>-->
+
+                <div>
+                    <button id="change" onclick="myFunction()" class="btn btn-primary" type="submit" style="margin-right: 15px">Change</button>
+                    <span><button class="btn btn-primary"><a th:href="@{/user/homepage}" style="color: white; font-weight: bold; text-decoration: none">return to homepage</a></button></span>
+                </div>
+
+        </form>
+    </div>
+    </div>
+</div>
+<script>
+    let show = document.querySelector("#message");
+    let button = document.querySelector("#change");
+     function myFunction(){
+         show.style.display = "block";
+    }
+    button.onmouseleave=()=>{
+        show.style.display = 'block';
+    }
+</script>
+</body>
+</html>
