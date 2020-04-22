@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Dashboard - SB Admin</title>
+    <script type="text/javascript" src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.twbsPagination.js"></script>
+    <!-- JS tạo nút bấm di chuyển trang start -->
+    <script src="http://1892.yn.lt/blogger/JQuery/Pagging/js/jquery.twbsPagination.js" type="text/javascript"></script>
+    <!-- JS tạo nút bấm di chuyển trang end -->
+
+
+    <script type="text/javascript">
+        $(function () {
+            var pageSize = 6; // Hiển thị 6 sản phẩm trên 1 trang
+            showPage = function (page) {
+                $(".contentPage").hide();
+                $(".contentPage").each(function (n) {
+                    if (n >= pageSize * (page - 1) && n < pageSize * page)
+                        $(this).show();
+                });
+            };
+            showPage(1);
+            ///** Cần truyền giá trị vào đây **///
+            var totalRows = 30; // Tổng số sản phẩm hiển thị
+            var btnPage = 5; // Số nút bấm hiển thị di chuyển trang
+            var iTotalPages = Math.ceil(totalRows / pageSize);
+
+            var obj = $('#pagination').twbsPagination({
+                totalPages: iTotalPages,
+                visiblePages: btnPage,
+                onPageClick: function (event, page) {
+                    console.info(page);
+                    showPage(page);
+                }
+            });
+            console.info(obj.data());
+        });
+    </script>
+    <style>
+        #pagination {
+            display: flex;
+            display: -webkit-flex; /* Safari 8 */
+            flex-wrap: nowrap;
+            -webkit-flex-wrap: nowrap; /* Safari 8 */
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+        footer {
+            clear: both;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            -webkit-flex-wrap: nowrap; /* Safari 8 */
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+        a {
+            color: white;
+        }
+        a:hover {
+            color: lightcyan;
+        }
+        td {
+            line-height: 37px;
+        }
+    </style>
+
+
+</head>
+<body class="sb-nav-fixed">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Book Store</a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i>
+    </button
+    ><!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input class="form-control" type="text" name="search" placeholder="Search for..." aria-label="Search"
+                   aria-describedby="basic-addon2"/>
+            <div class="input-group-append">
+                <button class="btn btn-primary " type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Navbar-->
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" sec:authorize="isAuthenticated()">
+                <i class="fas fa-user fa-fw" style="background: green"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" th:href="@{/admin/Registration}">Signup</a>
+                <div sec:authorize="isAnonymous()">
+                <a class="dropdown-item" th:href="@{/admin/login}" style="display: none">Login</a>
+                </div>
+                <div class="dropdown-divider"></div>
+                <div sec:authorize="isAuthenticated()">
+                <a class="dropdown-item" th:href="@{/logout}">Logout</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
+<aside style="width: 270px; height: 1500px; border:1px solid black; float: left; margin: 0; background: #323e52; color: white">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div style="text-align: center; font-size: 25px">Manage Panel</div>
+            <div sec:authorize="isAuthenticated()" style="text-align: center">
+                <b style="color: green">Welcome
+                    <span sec:authentication="principal.username"/>
+                </b>
+            </div>
+            <a class="nav-link" th:href="@{/admin/profile}"
+            >
+                <div class="sb-nav-link-icon"><i class="account_circle"></i></div>
+                Admin Profile</a
+            >
+        </div>
+            <div class="nav">
+                <a class="nav-link collapsed" style="display: block" href="#" data-toggle="collapse"
+                   data-target="#manageBooks" aria-expanded="false" aria-controls="collapseLayouts"
+                >
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Manage Books
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                    >
+                </a>
+                <div class="collapse" id="manageBooks" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" th:href="@{/admin/BookList}">Add</a>
+                        <a class="nav-link" href="#">Edit</a>
+                        <a class="nav-link" href="#">Delete</a>
+                    </nav>
+                </div>
+            </div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts1"
+               aria-expanded="false" aria-controls="collapseLayouts"
+            >
+                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                Manage Readers
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                >
+            </a>
+            <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="#">Add</a>
+                    <a class="nav-link" href="#">Edit</a>
+                    <a class="nav-link" href="#">Delete</a></nav>
+            </div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+               aria-expanded="false" aria-controls="collapsePages"
+            >
+                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                View Books
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                >
+            </a>
+            <div class="collapse" id="collapsePages" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="#">All books</a>
+                    <a class="nav-link" href="#">Loaned books</a>
+                    <a class="nav-link" href="#">Return books</a>
+                </nav>
+            </div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
+               aria-expanded="false" aria-controls="collapseLayouts"
+            >
+                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                View Users
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
+                >
+            </a>
+            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" th:href="@{/admin/registered-userlist}">Registered users</a>
+                    <a class="nav-link" href="#">Ordered users</a>
+                </nav>
+            </div>
+            <a class="nav-link" href="charts.html"
+            >
+                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                Charts</a
+            ><a class="nav-link" href="tables.html"
+        >
+            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+            Tables</a
+        >
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Logged in as:</div>
+            Start Bootstrap
+        </div>
+    </nav>
+</aside>
+<section style="float: right; width: 1550px;height: 1500px; margin: 0; padding: 0">
+    <div class="container-fluid">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+        <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Issued Books</div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="text-white" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">Readers Quantity</div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="small text-white stretched-link" href="#" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body">Loanded Books</div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="small text-white stretched-link" href="#" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">Available Books</div>
+                    <div class="card-footer d-flex align-items-center">
+                        <a class="small text-white stretched-link" href="#" style="font-size: 16px">Quantity:</a>
+                        <div class="text-white" style="font-size: 16px; margin-left: 10px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header" style="font-size: 20px; font-weight: bolder"><i
+                            class="fas fa-chart-area mr-1"></i>Book Chart
+                    </div>
+                    <div class="card-body">
+                        <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                        <div id="myBookChart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header" style="font-size: 20px; font-weight: bolder"><i
+                            class="fas fa-chart-bar mr-1"></i>Reader Chart
+                    </div>
+                    <div class="card-body">
+                        <canvas id="myBarChart" width="100%" height="40"></canvas>
+                    </div>
+                    <div id="myReaderChart"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header" style="font-size: 20px; font-weight: bolder"><i class="fas fa-table mr-1"></i>Books
+                Information
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"
+                           style="text-align: center" >
+                        <thead>
+                        <tr>
+                            <th scope="col">Book Code</th>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Book Detail</th>
+                            <th scope="col">Language</th>
+                            <th scope="col">Book Price</th>
+                            <th scope="col">Book Quantity</th>
+                            <th scope="col">Book category</th>
+                            <th scope="col">Created Date</th>
+                            <th scope="col">Created By</th>
+                            <th scope="col">Modified Date</th>
+                            <th scope="col">Modified By</th>
+                            <th scope="col">Book Status</th>
+                            <th scope="col">Book Image</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th scope="col">Book Code</th>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Book Detail</th>
+                            <th scope="col">Language</th>
+                            <th scope="col">Book Price</th>
+                            <th scope="col">Book Quantity</th>
+                            <th scope="col">Book category</th>
+                            <th scope="col">Created Date</th>
+                            <th scope="col">Created By</th>
+                            <th scope="col">Modified Date</th>
+                            <th scope="col">Modified By</th>
+                            <th scope="col">Book Status</th>
+                            <th scope="col">Book Image</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        <tr class="contentPage" th:each="book: ${bookList}">
+                            <td th:text="${book.getCode()}"></td>
+                            <td th:text="${book.getName()}"></td>
+                            <td th:text="${book.getDetail()}"></td>
+                            <td th:text="${book.getLanguage()}"></td>
+                            <td th:text="${book.getPrice()}"></td>
+                            <td th:text="${book.getQuantity()}"></td>
+                            <td th:text="${book.getCategories()}"></td>
+                            <td th:text="${book.getCreatedDate()}"></td>
+                            <td th:text="${book.getCreatedBy()}"></td>
+                            <td th:text="${book.getUpdatedDate()}"></td>
+                            <td th:text="${book.getUpdatedBy()}"></td>
+                            <td>
+                                <span th:if="${book.getStatus()==1}"><button class="btn btn-success">Active</button></span>
+                                <span th:unless="${book.getStatus()==1}"><button class="btn btn-secondary">Inactive</button></span>
+                            </td>
+
+                            <td><img th:src="${book.getImage()}" style="height: 50px; width: 50px"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul id="pagination"></ul>
+</section>
+<footer class="py-4 bg-light mt-auto">
+    <div class="d-flex align-items-center justify-content-between small">
+        <div class="text-muted" style="position: relative; left: 200px">Copyright &copy; Your Website 2019</div>
+        <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

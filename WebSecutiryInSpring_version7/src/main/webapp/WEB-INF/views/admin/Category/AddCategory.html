@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Category</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+<h1>Create province</h1>
+<p>
+   <button class="btn btn-success"> <a th:href="@{/admin/category-list}" style="color: white; text-decoration: none">Category list</a></button>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}" style="color: green"></p>
+</th:block>
+<form th:action="@{/admin/add-category}" th:object="${category}" method="post">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>Category Code:</td>
+            <td><input type="text" th:field="*{categoryCode}"/></td>
+        </tr>
+        <tr>
+            <td>Category Name:</td>
+            <td><input type="text" th:field="*{categoryName}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit" class="btn btn-primary">Create Category</button></td>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>

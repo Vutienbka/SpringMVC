@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>List users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" style="height: 700px">
+    <p th:text="${message}" style="color: red" ></p>
+    <a th:href="@{/admin/add-book}">
+        <button class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>Add New Book</button>
+    </a>
+    <a th:href="@{/admin/add-category}">
+        <button class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>Add New Category</button>
+    </a>
+    <div>
+        <table class="table table-bordered table-hover" style="text-align: center">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Book Code</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Book Detail</th>
+                <th scope="col">Language</th>
+                <th scope="col">Book Image</th>
+                <th scope="col">Book Price</th>
+                <th scope="col">Book Quantity</th>
+                <th scope="col">Book Status</th>
+                <th scope="col">Book category</th>
+                <th scope="col">Created By</th>
+                <th scope="col">Modified Date</th>
+                <th scope="col">Modified By</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">View</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="book:${bookList}">
+                <td th:text="${book.getCode()}"></td>
+                <td th:text="${book.getName()}"></td>
+                <td th:text="${book.getDetail()}"></td>
+                <td th:text="${book.getLanguage()}"></td>
+
+                <td th:text="${book.getImage()}"></td>
+                <td th:text="${book.getPrice()}"></td>
+                <td th:text="${book.getQuantity()}"></td>
+                <td th:text="${book.getCategories()}"></td>
+
+                <td>
+                    <span th:if="${book.getStatus()==1}">Active</span>
+                    <span th:unless="${book.getStatus()==1}">Inactive</span>
+                </td>
+
+                <td th:text="${book.getCreatedDate()}"></td>
+                <td th:text="${book.getCreatedBy()}"></td>
+                <td th:text="${book.getUpdatedDate()}"></td>
+                <td th:text="${book.getUpdatedBy()}"></td>
+                <td><a th:href="@{/admin/book/{id}/edit(id=${book.getId()})}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a th:href="@{/admin/book/{id}/delete(id=${book.getId()})}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <td><a th:href="@{/admin/book/{id}/view(id=${book.getId()})}"><span class="glyphicon glyphicon-envelope"></span></a></td>
+            </tr>
+            </tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><b>Total : <span th:text="${bookList.size()}"></span></b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>

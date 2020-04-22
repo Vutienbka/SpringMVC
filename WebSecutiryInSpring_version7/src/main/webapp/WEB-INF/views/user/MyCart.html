@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>myCart</title>
+    <style>
+        img{
+            width:70px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 style="color: blue">
+        My list of item
+    </h2>
+    <table class="table table-bordered table-striped" style="text-align: center;font-weight: bold">
+        <tr>
+            <th>Book Name:</th>
+            <th>Quantity:</th>
+            <th>Price:</th>
+            <th>Image</th>
+            <th>Total Price</th>
+            <th>Order this item</th>
+        </tr>
+        <tr th:each="item : ${myCart.getItemList()}">
+            <td><p th:text="${item.getBook().getName()}"/></td>
+            <td>
+                <p th:text="${item.getQuantity()}"/>
+            </td>
+            <td><p th:text="${item.getPrice()} + 'VND'"/></td>
+            <td><img th:src="@{${item.getBook().getImage()}}" th:alt="${item.getBook().getImage()}"/></td>
+            <td><p th:text="${item.getPrice()*item.getQuantity()} + 'VND'"/></td>
+            <td><button class="btn btn-primary">Order Now</button></td>
+        </tr>
+    </table>
+    <div>
+        <th:block>
+            <span>Total price:</span><span th:text="${totalPrice}"></span>
+        <button class="btn btn-primary">Order All</button>
+        </th:block>
+    </div>
+</div>
+</body>
+</html>

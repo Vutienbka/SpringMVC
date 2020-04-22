@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>List users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" style="height: 700px">
+    <p th:text="${message}" style="color: red" ></p>
+    <form method="post" th:action="@{/customer/addForm}">
+        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>Add New Customer</button>
+    </form>
+    <div>
+        <table class="table table-bordered table-hover" style="text-align: center">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">User No</th>
+                <th scope="col">User's FullName</th>
+                <th scope="col">Username</th>
+                <th scope="col">User's Password</th>
+                <th scope="col">User'status</th>
+                <th scope="col">Created Date</th>
+                <th scope="col">Created By</th>
+                <th scope="col">Modified Date</th>
+                <th scope="col">Modified By</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col">View</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user:${userList}">
+                <td th:text="${user.getId()}"></td>
+                <td th:text="${user.getFullName()}"></td>
+                <td th:text="${user.getUsername()}"></td>
+                <td th:text="${user.getPassword()}"></td>
+                <td>
+                    <span th:if="${user.getStatus()==1}">Active</span>
+                    <span th:unless="${user.getStatus()==1}">Inactive</span>
+                </td>
+                <td th:text="${user.getCreatedDate()}"></td>
+                <td th:text="${user.getCreatedBy()}"></td>
+                <td th:text="${user.getUpdatedDate()}"></td>
+                <td th:text="${user.getUpdatedBy()}"></td>
+                <td><a th:href="@{/customer/{id}/edit(id=${user.getId()})}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a th:href="@{/customer/{id}/delete(id=${user.getId()})}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                <td><a th:href="@{/customer/{id}/view(id=${user.getId()})}"><span class="glyphicon glyphicon-envelope"></span></a></td>
+            </tr>
+            </tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><b>Total users: <span th:text="${userList.size()}"></span></b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>

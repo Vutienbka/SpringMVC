@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c121c52a-c24f-452b-8b30-644468f9620c" name="Default Changelist" comment="" />
+    <list default="true" id="c121c52a-c24f-452b-8b30-644468f9620c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../CustomerManageWithRepositoryModel/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageORM/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerManageORM/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageORM/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerManageORM/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageORM/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerManageORM/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageWithRepositoryModel/.idea/CustomerManageWithRepositoryModel.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageWithRepositoryModel/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerManageWithRepositoryModel/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageWithRepositoryModel/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageWithRepositoryModel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerManageWithRepositoryModel/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageWithThymleaf/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerManageWithThymleaf/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageWithThymleaf/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerManageWithThymleaf/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerManageWithThymleaf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerManageWithThymleaf/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +35,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -27,17 +46,17 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1ZNUNVZiQVGG9PhFKULFkMkFHwn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CurrencyExchange" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.2075" />
     <property name="project.structure.side.proportion" value="0.7330174" />
   </component>
@@ -126,28 +145,6 @@
       </method>
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -159,17 +156,18 @@
       <option name="presentableId" value="Default" />
       <updated>1584679005418</updated>
       <workItem from="1584679009996" duration="4310000" />
+      <workItem from="1587401169488" duration="23000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1584680338672">
+    <state x="588" y="214" width="800" height="677" key="#Project_Structure" timestamp="1587401187560">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="214" width="800" height="677" key="#Project_Structure/67.27.1853.1053@67.27.1853.1053" timestamp="1584680338672" />
+    <state x="588" y="214" width="800" height="677" key="#Project_Structure/67.27.1853.1053@67.27.1853.1053" timestamp="1587401187560" />
     <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584679468616">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

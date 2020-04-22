@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Edit form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!--    <script src="JQuery/jquery.js"></script>-->
+</head>
+<body>
+
+<div id = "editForm" class="container-sm" style="border: 1px solid #cccccc; background: #f2f2f2; width: 700px; position: relative;top: 0px">
+    <div class="panel-group" style="margin: 0 auto">
+        <div class="panel panel-primary"  >
+            <div class="panel-heading" >
+                <h3 class="panel-title" style="text-align: center; margin-top: 20px; color: blue">Add Book Form</h3>
+                <p style="color: red" th:text="${message}"> </p>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" method="post" th:action="@{/admin/add-book}">
+                    <div class="form-group">
+                        <label class="control-label"  >Book Code:</label>
+                        <input type="text" name="code"  th:field="*{book.code}" class="form-control"  placeholder="Book Code">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Book Name</label>
+                        <input type="text" name="name"  th:field="*{book.name}" class="form-control" placeholder="Book Name" >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"  >Category Code</label>
+                        <input type="text" name="categories" th:field="*{category.categoryCode}" class="form-control"  placeholder="Categories Code">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"  >Category Name</label>
+                        <input type="text" name="categories" th:field="*{category.categoryName}" class="form-control"  placeholder="Categories Name">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Detail</label>
+                        <input type="text" name = "detail" th:field="*{book.detail}" class="form-control" placeholder="Book detail" >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Price</label>
+                        <input type="text"  name="price" th:field="*{book.price}" class="form-control" placeholder="Price" >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Quantity</label>
+                        <input type="text" name="quantity" th:field="*{book.quantity}" class="form-control" placeholder="Quantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Language</label>
+                        <input type="text"  name="language" th:field="*{book.language}" class="form-control" placeholder="Language" >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Status</label>
+                        <input type="text"  name="status" th:field="*{book.status}" class="form-control" value="1" placeholder="Status" >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Image</label>
+                        <input type="text" name="image" th:field="*{book.image}" class="form-control" placeholder="Path of image" >
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="save" class="btn btn-success" style="width: 120px">Save</button>
+                        <span>
+                            <button class="btn btn-primary" ><a th:href="@{/admin/welcome}" style="color: white; text-decoration: none">Back to home page </a></button>
+                        </span>
+                        <span style="margin: 0 10px">OR</span>
+                        <span>
+                            <button class="btn btn-primary" ><a th:href="@{/admin/BookList}" style="color: white; text-decoration: none">Back to add page</a></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

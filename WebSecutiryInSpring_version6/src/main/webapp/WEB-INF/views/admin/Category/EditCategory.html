@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Category</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>Edit Category</h1>
+<p>
+    <button class="btn btn-success"><span class="glyphicon glyphicon-envelope"></span><a th:href="@{/admin/category-list}" style="color: white; text-decoration: none">View Category List</a></button>
+</p>
+
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/admin/edit-category}" th:object="${category}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>Category Code:</td>
+            <td><input type="text" th:field="*{categoryCode}"/></td>
+        </tr>
+        <tr>
+            <td>Category Name:</td>
+            <td><input type="text" th:field="*{categoryName}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update Category"></td>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>
