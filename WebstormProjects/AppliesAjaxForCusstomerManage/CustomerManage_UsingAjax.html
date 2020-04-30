@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply Ajax for Customer Manage Program</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js_And_css_Lib/js/jquery.js"></script>
+<body>
+<div class="container" style="top: 20px">
+    <h3>Hello</h3>
+    <a href="#" onclick="getCustomerList()">List customer</a>
+    <p onclick="createCustomer()"><a href="#">Create customer</a></p>
+    <table class="table table-bordered" id="customerTable">
+
+    </table>
+<!--    <input id="searchQuery" type="text" oninput="getStudentByName()" onprogress="notShowStudent()">-->
+    <div id="studentList">
+
+    </div>
+
+
+</div>
+<div>
+</div>
+<script>
+
+    // function getStudentByName() {
+    //     let value = $('#searchQuery').val();
+    //     $.ajax('http://localhost:8080/API/customers/searchedByName/' + value)
+    //         .done(function (studentList) {
+    //         buildUI(studentList);
+    //     })
+    // }
+    function getCustomerList() {
+        $.ajax('http://localhost:8080/API/customers')
+            .done(function (studentList) {
+                showCustomerTable(studentList);
+        })
+    }
+
+    function showCustomerTable(studentList) {
+        let cTable = document.getElementById("customerTable");
+        for (let i=0; i<studentList.length;i++){
+            console.log(studentList.length);
+            let tr = document.createElement("tr");
+            cTable.appendChild(tr);
+              for(let j=0; j<Object.keys(studentList[i]).length;j++) {
+                  console.log(Object.keys(studentList[i]).length);
+                  let td=document.createElement("td");
+                  td.innerText = Object.values(studentList[i])[j];
+                  tr.appendChild(td);
+
+              }
+
+            let a = document.createElement("a");
+            a.href="#";
+            a.textContent="Edit";
+            a.setAttribute("id","edit");
+            tr.appendChild(a);
+        }
+    }
+
+    // function buildUI(studentList) {
+    //     let stdList = document.getElementById("studentList");
+    //     stdList.innerHTML="";
+    //     for (let i=0; i<studentList.length;i++){
+    //         let p = document.createElement("p");
+    //         p.innerText=Object.values(studentList[i])[0];
+    //         stdList.appendChild(p);
+    //     }
+    // }
+    function notShowStudent() {
+        let stdList = document.getElementById("studentList");
+        stdList.innerHTML="";
+    }
+</script>
+</body>
+</html>

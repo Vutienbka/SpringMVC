@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create customer</title>
+    <script src="../../jQuery/jQuery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#createNewCustomer').submit(function(event) {
+                let customerName = $('#customerName').val();
+                let customerEmail = $('#customerEmail').val();
+                let customerAddress = $('#customerAddress').val();
+                let customerId = $('#customerId').val();
+                let message=document.getElementById("message");
+                let json = { "customerName" : customerName, "customerEmail" : customerEmail, "customerAddress": customerAddress, "id": customerId};
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type : "POST",
+                    data: JSON.stringify(json),
+                    url: "http://localhost:8080/API/customer/create",
+                    success: function() {
+                        // let respContent = "Created successfully";
+                        //$("#message").html(respContent);
+                        message.innerText="Created successfully";
+                        message.style.color='green';
+                    }
+                });
+                event.preventDefault();
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+<h1>Create customer</h1>
+<p>
+    <a href="http://localhost:8080/customers">Customer list</a>
+</p>
+    <div>
+        <p id="message"></p>
+    </div>
+<form id="createNewCustomer" method="post">
+    <table>
+        <tr>
+            <td>Customer Name:</td>
+            <td><input id="customerName" type="text"/></td>
+        </tr>
+        <tr>
+            <td>Customer Email:</td>
+            <td><input id = "customerEmail" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Customer Address:</td>
+            <td><input id = "customerAddress" type="text"/></td>
+        </tr>
+        <tr>
+            <td>Customer No:</td>
+            <td><input id = "customerId" type="text"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create customer"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

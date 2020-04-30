@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" th:action="@{/search}">
+    <input type="text" name="search">
+    <button type="submit">Search</button>
+</form>
+<button><a th:href="@{/add}">Add new</a></button>
+<table>
+    <tr>
+        <th>Category name</th>
+    </tr>
+    <tr th:each="category:${categoryList}">
+        <td>Category name</td>
+        <td th:text="${category.getName()}"></td>
+        <td><a th:href="@{/edit/{id}(id=${category.getId()})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${category.getId()})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>

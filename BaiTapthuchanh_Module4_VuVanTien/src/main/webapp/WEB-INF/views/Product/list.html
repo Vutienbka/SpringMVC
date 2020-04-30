@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" th:action="@{/search}">
+    <input type="text" name="search">
+    <button type="submit">Search</button>
+</form>
+<button><a th:href="@{/productAdd}">Add new</a></button>
+<table>
+    <tr th:each="product:${productList}">
+        <td>Product name</td>
+        <td th:text="${product.getProductName()}"></td>
+        <td th:text="${product.getPrice()}"></td>
+        <td th:text="${product.getQuantity()}"></td>
+        <td th:text="${product.getCategory().getName()}"></td>
+        <td><a th:href="@{/edit/{id}(id=${product.getId()})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${product.getId()})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>

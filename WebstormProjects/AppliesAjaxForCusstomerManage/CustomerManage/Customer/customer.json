@@ -1,0 +1,20 @@
+[
+  {
+    "customerName": "Vu Hoang Nam Anh Tien",
+    "customerEmail": "vanson@gmail.com",
+    "customerAddress": "Ha Noi",
+    "id": 1
+  },
+  {
+    "customerName": "Trinh Van Son",
+    "customerEmail": "vanson@gmail.com",
+    "customerAddress": "Ninh Hoa",
+    "id": 2
+  },
+  {
+    "customerName": "Vu Tien",
+    "customerEmail": "vutien@gmail.com",
+    "customerAddress": "Ha Nam",
+    "id": 3
+  }
+]
